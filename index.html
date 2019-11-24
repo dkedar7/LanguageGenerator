@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<body>
+                <h1>Talk to GPT-2</h1>
+        <div>
+            <form class="md-form">
+                <textarea name="text_input" rows="2" id="textarea1"
+                placeholder="Write your prompt and let GPT-2 build you a story..."></textarea>
+
+                <textarea name="text_output" rows="2" id="textarea2"
+                placeholder="Story will get generated here..."></textarea>
+
+                <p name="text_result" id="textarea2" placeholder="The story goes here.."></p>
+                <div>
+                    <button type="submit">Generate</button>
+                </div>
+            </form>
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        // $('textform').on('submit', function (e) {
+        //     e.preventDefault();
+        //     $.post(window.location.href, $(this).serialize(), function (data) {
+        //         console.log('Result Found!')
+        //         $('textarea2').val(data)
+        //     });
+        // });
+
+        $("form").submit(function(event){
+            event.preventDefault();
+            $.post(window.location.href, $("form").serialize(), function (data) {
+                console.log('Result Found!')
+                $('textarea#textarea2').val(data)
+            })
+        })
+    </script>
+</body>
+</html>
