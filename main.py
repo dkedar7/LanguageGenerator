@@ -16,4 +16,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(threaded=True, port=5000)
+    app.run('0.0.0.0', os.environ.get('PORT', 8080))
