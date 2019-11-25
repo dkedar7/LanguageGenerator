@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, request, send_file
+from flask import Flask, request, render_template
 from model import extend
 
 
@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return send_file('index.html')
+        return render_template('index.html')
     data = request.form.get('text_input')
     return extend(data)
 
