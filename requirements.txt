@@ -1,5 +1,5 @@
 Flask==1.1.1
 gunicorn==20.0.2
-numpy==1.17.4
+numpy==1.22.0
 pytorch-transformers==1.2.0
 joblib==0.14.0
